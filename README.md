@@ -22,7 +22,7 @@
 ## 📥 Download
 
 ### Windows
-Download the latest installer from the [**Releases**](../../releases/latest) page.
+Download the latest installer from the [**Releases**](https://github.com/nikkhilll1/GrabTube/releases/latest) page.
 
 1. Download `GrabTube-Setup-*.exe`
 2. Run the installer
