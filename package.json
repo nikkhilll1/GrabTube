@@ -45,8 +45,8 @@
       "oneClick": true,
       "perMachine": false,
       "allowToChangeInstallationDirectory": false,
-      "installerIcon": "renderer/assets/icon.png",
-      "uninstallerIcon": "renderer/assets/icon.png",
+      "installerIcon": "renderer/assets/icon.ico",
+      "uninstallerIcon": "renderer/assets/icon.ico",
       "shortcutName": "GrabTube"
     }
   }

@@ -24,10 +24,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Convert PNG icon to ICO
+        shell: pwsh
+        run: |
+          # Use magick (ImageMagick is pre-installed on windows-latest)
+          magick renderer/assets/icon.png -define icon:auto-resize=256,128,64,48,32,16 renderer/assets/icon.ico
+
       - name: Build Electron app
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx electron-builder --win --x64 --publish never
+
+      - name: List dist contents
+        run: dir dist
 
       - name: Upload Installer Artifact
         uses: actions/upload-artifact@v4
