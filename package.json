@@ -1,0 +1,53 @@
+{
+  "name": "grabtube",
+  "version": "1.0.0",
+  "description": "Premium YouTube Video Downloader — Download videos in highest quality with one click",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "GrabTube",
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^8.2.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.grabtube.app",
+    "productName": "GrabTube",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "renderer/**/*",
+      "src/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "renderer/assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "installerIcon": "renderer/assets/icon.png",
+      "uninstallerIcon": "renderer/assets/icon.png",
+      "shortcutName": "GrabTube"
+    }
+  }
+}
